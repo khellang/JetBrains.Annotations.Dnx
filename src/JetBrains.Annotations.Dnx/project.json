@@ -1,0 +1,25 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "JetBrains.Annotations.Dnx Class Library",
+  "authors": [ "Kristian" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "Microsoft.Framework.Runtime.Roslyn": "1.0.0-beta6",
+    "JetBrains.Annotations": "9.2.0"
+  },
+
+  "preprocess": "AnnotationsCompileModule.cs",
+
+  "frameworks": {
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Runtime": "4.0.10.0",
+        "System.Xml": "4.0.0.0",
+        "System.Xml.Linq": "4.0.0.0"
+      }
+    }
+  }
+}
