@@ -39,48 +39,48 @@ The following is produced in `./bin/{configuration}` at build-time:
 <?xml version="1.0" encoding="utf-8"?>
 <assembly name="JetBrains.Annotations.Dnx">
   <member name="T:JetBrains.Annotations.Dnx.TestClass">
-    <attribute ctor="JetBrains.Annotations.PublicAPIAttribute.PublicAPIAttribute()" />
-    <attribute ctor="JetBrains.Annotations.BaseTypeRequiredAttribute.BaseTypeRequiredAttribute(System.Type)">
+    <attribute ctor="M:JetBrains.Annotations.PublicAPIAttribute.#ctor" />
+    <attribute ctor="M:JetBrains.Annotations.BaseTypeRequiredAttribute.#ctor(System.Type)">
       <argument>typeof(string)</argument>
     </attribute>
   </member>
   <member name="F:JetBrains.Annotations.Dnx.TestClass._readOnlyField">
-    <attribute ctor="JetBrains.Annotations.NotNullAttribute.NotNullAttribute()" />
+    <attribute ctor="M:JetBrains.Annotations.NotNullAttribute.#ctor" />
   </member>
   <member name="F:JetBrains.Annotations.Dnx.TestClass._otherField">
-    <attribute ctor="JetBrains.Annotations.NotNullAttribute.NotNullAttribute()" />
+    <attribute ctor="M:JetBrains.Annotations.NotNullAttribute.#ctor" />
   </member>
-  <member name="M:JetBrains.Annotations.Dnx.TestClass.TestClass(string)">
+  <member name="M:JetBrains.Annotations.Dnx.TestClass.#ctor(System.String)">
     <parameter name="value">
-      <attribute ctor="JetBrains.Annotations.NotNullAttribute.NotNullAttribute()" />
+      <attribute ctor="M:JetBrains.Annotations.NotNullAttribute.#ctor" />
     </parameter>
   </member>
   <member name="P:JetBrains.Annotations.Dnx.TestClass.Value">
-    <attribute ctor="JetBrains.Annotations.CanBeNullAttribute.CanBeNullAttribute()" />
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
   </member>
-  <member name="M:JetBrains.Annotations.Dnx.TestClass.Value.set">
-    <attribute ctor="JetBrains.Annotations.NotNullAttribute.NotNullAttribute()" />
+  <member name="M:JetBrains.Annotations.Dnx.TestClass.set_Value(System.String)">
+    <attribute ctor="M:JetBrains.Annotations.NotNullAttribute.#ctor" />
   </member>
-  <member name="M:JetBrains.Annotations.Dnx.TestClass.SomeMethod(System.Collections.Generic.IEnumerable&lt;string&gt;, string)">
-    <attribute ctor="JetBrains.Annotations.StringFormatMethodAttribute.StringFormatMethodAttribute(string)">
+  <member name="M:JetBrains.Annotations.Dnx.TestClass.SomeMethod(System.Collections.Generic.IEnumerable{System.String},System.String)">
+    <attribute ctor="M:JetBrains.Annotations.StringFormatMethodAttribute.#ctor(System.String)">
       <argument>format</argument>
     </attribute>
-    <attribute ctor="JetBrains.Annotations.ContractAnnotationAttribute.ContractAnnotationAttribute(string)">
+    <attribute ctor="M:JetBrains.Annotations.ContractAnnotationAttribute.#ctor(System.String)">
       <argument>values:null =&gt; halt</argument>
     </attribute>
     <parameter name="values">
-      <attribute ctor="JetBrains.Annotations.NotNullAttribute.NotNullAttribute()" />
-      <attribute ctor="JetBrains.Annotations.ItemNotNullAttribute.ItemNotNullAttribute()" />
-      <attribute ctor="JetBrains.Annotations.NoEnumerationAttribute.NoEnumerationAttribute()" />
+      <attribute ctor="M:JetBrains.Annotations.NotNullAttribute.#ctor" />
+      <attribute ctor="M:JetBrains.Annotations.ItemNotNullAttribute.#ctor" />
+      <attribute ctor="M:JetBrains.Annotations.NoEnumerationAttribute.#ctor" />
     </parameter>
     <parameter name="format">
-      <attribute ctor="JetBrains.Annotations.CanBeNullAttribute.CanBeNullAttribute()" />
+      <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
     </parameter>
   </member>
-  <member name="M:JetBrains.Annotations.Dnx.TestClass.GenericMethod&lt;T&gt;(System.Collections.Generic.IEnumerable&lt;T&gt;)">
+  <member name="M:JetBrains.Annotations.Dnx.TestClass.GenericMethod``1(System.Collections.Generic.IEnumerable{``0})">
     <parameter name="values">
-      <attribute ctor="JetBrains.Annotations.NotNullAttribute.NotNullAttribute()" />
-      <attribute ctor="JetBrains.Annotations.NoEnumerationAttribute.NoEnumerationAttribute()" />
+      <attribute ctor="M:JetBrains.Annotations.NotNullAttribute.#ctor" />
+      <attribute ctor="M:JetBrains.Annotations.NoEnumerationAttribute.#ctor" />
     </parameter>
   </member>
 </assembly>

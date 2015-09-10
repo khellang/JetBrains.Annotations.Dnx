@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -137,7 +138,7 @@ namespace JetBrains.Annotations.Dnx
 
             if (ShouldIncludeInResult(attributes))
             {
-                var memberName = GetMemberName(symbol);
+                var memberName = symbol.GetDocumentationCommentId();
 
                 member = new AnnotationMember(memberName, attributes);
                 return true;
@@ -169,7 +170,7 @@ namespace JetBrains.Annotations.Dnx
 
             if (ShouldIncludeInResult(attributes, parameters))
             {
-                var memberName = GetMemberName(method);
+                var memberName = method.GetDocumentationCommentId();
 
                 member = new AnnotationMember(memberName, attributes, parameters);
                 return true;
@@ -201,23 +202,6 @@ namespace JetBrains.Annotations.Dnx
                 {
                     yield return new AnnotationParameter(parameter.Name, attributes);
                 }
-            }
-        }
-
-        private static string GetMemberName(ISymbol symbol)
-        {
-            switch (symbol.Kind)
-            {
-                case SymbolKind.Method:
-                    return $"M:{symbol.ToDisplayString()}";
-                case SymbolKind.Property:
-                    return $"P:{symbol.ToDisplayString()}";
-                case SymbolKind.NamedType:
-                    return $"T:{symbol.ToDisplayString()}";
-                case SymbolKind.Field:
-                    return $"F:{symbol.ToDisplayString()}";
-                default:
-                    throw new NotSupportedException($"The symbol kind '{symbol.Kind}' is not supported.");
             }
         }
 
@@ -258,7 +242,7 @@ namespace JetBrains.Annotations.Dnx
                 .Select(GetArgumentValue)
                 .ToImmutableArray();
 
-            var constructor = attributeData.AttributeConstructor.ToDisplayString();
+            var constructor = attributeData.AttributeConstructor.GetDocumentationCommentId();
 
             attribute = new AnnotationAttribute(constructor, arguments);
             return true;
