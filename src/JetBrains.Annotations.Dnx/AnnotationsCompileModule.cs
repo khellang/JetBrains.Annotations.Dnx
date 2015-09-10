@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
-using System.Xml;
 using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -24,7 +23,9 @@ namespace JetBrains.Annotations.Dnx
             {
                 var path = InitializeDirectory(context, projectName);
 
-                var assembly = new Assembly(projectName, members);
+                var assemblyName = context.Compilation.Assembly.Name;
+
+                var assembly = new Assembly(assemblyName, members);
 
                 CreateDocument(path, assembly);
             }
